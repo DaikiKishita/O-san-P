@@ -15,7 +15,7 @@ use \App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     //登録画面にリダイレクト
-    return redirect('/loginto');
+    return redirect('/login');
 });
 
 //コントローラーの中の関数を指定
@@ -43,6 +43,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/profile',
     [UserController::class,'profile']
     )->name('profile');
+
 });
 
 
