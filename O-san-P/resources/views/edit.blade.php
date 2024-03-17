@@ -34,6 +34,12 @@
                 <button type="submit">更新</button>
             </form>
         </div>
+        <div class="mx-auto" style="width: 250px;">
+            <br><p>↓プロフィールに戻る際はこちら↓</p>
+            <div class="d-flex justify-content-center">
+                <a href="/profile">プロフィールへ</a>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
