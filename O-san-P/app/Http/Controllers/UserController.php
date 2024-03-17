@@ -104,11 +104,16 @@ class UserController extends Controller
         $email=$request["email"];
         $cureent_password=Auth::user()->password;
         $current_email=Auth::user()->email;
-        $email_list=User::query()//認証ユーザのemailアドレスを抜いた配列
-                    ->select('email')
+        //認証ユーザのemailアドレスを抜いた配列
+        $email_collection=User::select('email')
                     ->where('email','<>',$current_email)
                     ->get()
                     ->toArray();
+        //連想配列をただの配列に直す
+        $email_list=array();
+        foreach($email_collection as $emails){
+            array_push($email_list,$emails["email"]);
+        }
         if(Hash::check($password,$cureent_password)){//まずはパスワードで判定
             if(!in_array($email,$email_list)){//メールアドレスは一意なので配列を使って判定
                 User::where('email',$current_email)->update([
