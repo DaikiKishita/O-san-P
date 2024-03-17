@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<div>
+<div class="ratio ratio-2x2">
     <div class="d-flex justify-content-center">
         @if(!empty($fail))
         <p class="text-danger">{{ $fail }}</p>

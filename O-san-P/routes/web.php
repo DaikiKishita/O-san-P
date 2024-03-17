@@ -44,6 +44,14 @@ Route::middleware('auth')->group(function (){
     [UserController::class,'profile']
     )->name('profile');
 
+    Route::get('/edit',
+    [UserController::class,'show_editer']
+    )->name('show_editer');
+
+    Route::post('/edit',
+    [UserController::class,'edit']
+    )->name('edit');
+
 });
 
 

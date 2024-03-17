@@ -31,6 +31,10 @@
                 <p class="text-start">氏名: {{$user->name}}</p>
                 <p class="text-start">email: {{$user->email}}</p>
                 <p class="text-start">登録日: {{$created}}</p>
+                <form action="{{route('show_editer')}}" method="get">
+                    @csrf
+                    <button>編集</button>
+                </form>
             </div>
         </div>
         <hr>
