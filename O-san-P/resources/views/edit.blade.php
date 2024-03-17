@@ -21,11 +21,11 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">氏名</label>
-                    <input type="text" name="name" id="name" placeholder="{{$user->name}}" required>
+                    <input type="text" name="name" id="name" value="{{$user->name}}" required>
                 </div>
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
-                    <input type="email" name="email" id="email" placeholder='{{$user->email}}'  required>
+                    <input type="email" name="email" id="email" value='{{$user->email}}'  required>
                 </div>
                 <div class="form-group">
                     <label for="password">パスワード</label>
